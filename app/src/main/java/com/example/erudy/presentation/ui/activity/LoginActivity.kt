@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.erudy.R
 import com.example.erudy.presentation.ui.fragments.LoginFragment
+import com.example.erudy.presentation.ui.fragments.RegisterFragment
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -29,6 +30,20 @@ class LoginActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 .replace(R.id.activityContainer, LoginFragment())
                 .commit()
         }
+    }
+
+    fun goToLogin() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.activityContainer, LoginFragment())
+            .commit()
+    }
+
+    fun goToRegister() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.activityContainer, RegisterFragment())
+            .commit()
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.erudy.presentation.presenter
+package com.example.erudy.presentation.presenter.view
 
 import com.example.erudy.base.BaseView
 

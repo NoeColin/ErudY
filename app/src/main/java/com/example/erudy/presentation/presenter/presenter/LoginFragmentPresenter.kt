@@ -1,6 +1,7 @@
-package com.example.erudy.presentation.presenter
+package com.example.erudy.presentation.presenter.presenter
 
 import com.example.erudy.base.BasePresenter
+import com.example.erudy.presentation.presenter.view.LoginView
 import com.parse.ParseUser
 import javax.inject.Inject
 
