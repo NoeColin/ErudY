@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">ErudY</string>
-    <string name="mail_example">bilbon.sacquet@comte.lotr</string>
-    <string name="password_example">********</string>
+
     <string name="login">Se connecter</string>
     <string name="not_register">Vous n\'avez pas encore de compte?</string>
     <string name="register">S\'enregistrer</string>
-    <string name="text_email">Email :</string>
-    <string name="text_password">Mot de passe :</string>
     <string name="forgot_password">Mot de passe oublié?</string>
+
+    <string name="text_email">Email :</string>
+    <string name="mail_example">bilbon.sacquet@comte.lotr</string>
+    <string name="text_password">Mot de passe :</string>
+    <string name="confirm_password">Confirmez mot de passe :</string>
+    <string name="password_example">********</string>
+    <string name="text_firstname">Prénom :</string>
+    <string name="firstname_example">Bilbon</string>
+    <string name="text_lastname">Nom :</string>
+    <string name="lastname_example">Sacquet</string>
+    <string name="text_promotion">Promotion :</string>
+    <string name="promotion_promotion">Communauté de l\'anneau</string>
 </resources>
