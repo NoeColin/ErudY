@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.ui.activity.RegisterActivity"></activity>
+        <activity android:name=".presentation.ui.activity.ChatActivity"></activity>
+        <activity android:name=".presentation.ui.activity.RegisterActivity" />
         <activity android:name=".presentation.ui.activity.LoginActivity" />
         <activity android:name=".presentation.ui.activity.MainActivity">
             <intent-filter>
