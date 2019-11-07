@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ErudY</string>
+    <string name="mail_example">bilbon.sacquet@comte.lotr</string>
+    <string name="password_example">********</string>
+    <string name="login">Se connecter</string>
+    <string name="not_register">Vous n\'avez pas encore de compte?</string>
+    <string name="register">S\'enregistrer</string>
+    <string name="text_email">Email :</string>
+    <string name="text_password">Mot de passe :</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
 </resources>
