@@ -2,6 +2,7 @@ package com.example.erudy
 
 import android.app.Activity
 import android.app.Application
+import com.example.erudy.di.AppModule
 import com.parse.Parse
 import com.parse.ParseInstallation
 import dagger.android.AndroidInjector
