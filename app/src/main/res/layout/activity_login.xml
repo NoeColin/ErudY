@@ -46,7 +46,6 @@
         android:hint="@string/mail_example"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,7 +106,6 @@
         android:layout_marginTop="28dp"
         android:text="@string/not_register"
         app:layout_constraintEnd_toEndOf="@+id/login_button"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="@+id/login_button"
         app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
@@ -121,7 +119,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/colorYnovGreen"
         app:layout_constraintEnd_toEndOf="@+id/not_register"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/not_register"
         app:layout_constraintTop_toTopOf="@+id/not_register" />
 
