@@ -8,10 +8,8 @@ import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
 import com.example.erudy.presentation.presenter.presenter.RequestDetailFragmentPresenter
 import com.example.erudy.presentation.presenter.view.RequestDetailView
-import com.example.erudy.presentation.ui.activity.LoginActivity
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_register.*
+import kotlinx.android.synthetic.main.fragment_request_detail.*
 import javax.inject.Inject
 
 
@@ -19,7 +17,7 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
 
     @Inject
     override lateinit var presenter: RequestDetailFragmentPresenter
-    override val layoutId: Int = R.layout.fragment_register
+    override val layoutId: Int = R.layout.fragment_request_detail
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -32,11 +30,11 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
     }
 
     override fun displayLoader() {
-        //loader.visibility = View.VISIBLE
+        loader.visibility = View.VISIBLE
     }
 
     override fun hideLoader() {
-        //loader.visibility = View.GONE
+        loader.visibility = View.GONE
     }
 
     override fun showError(errorMessage: String) {
@@ -45,8 +43,6 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        login.setOnClickListener {
-            (activity as LoginActivity).goToLogin()
-        }
+
     }
 }
