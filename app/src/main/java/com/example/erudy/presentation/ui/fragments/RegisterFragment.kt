@@ -47,5 +47,12 @@ class RegisterFragment : BaseFragment<RegisterFragmentPresenter>(), RegisterView
         login.setOnClickListener {
             (activity as LoginActivity).goToLogin()
         }
+        register_button.setOnClickListener {
+            signup()
+        }
+    }
+
+    fun signup() {
+        presenter.signup()
     }
 }
