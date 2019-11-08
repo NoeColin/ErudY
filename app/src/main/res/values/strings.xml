@@ -5,6 +5,7 @@
     <string name="not_register">Vous n\'avez pas encore de compte?</string>
     <string name="register">S\'enregistrer</string>
     <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="already_register">Vous avez déjà un compte?</string>
 
     <string name="text_email">Email :</string>
     <string name="mail_example">bilbon.sacquet@comte.lotr</string>
@@ -15,10 +16,18 @@
     <string name="firstname_example">Bilbon</string>
     <string name="text_lastname">Nom :</string>
     <string name="lastname_example">Sacquet</string>
-    <string name="already_register">Vous avez déjà un compte?</string>
+
     <string name="message">Saisir un message</string>
     <string name="my_message">Mon message</string>
     <string name="other_message">Son message</string>
+
+    <string name="request_title_example">Nouveau roi</string>
+    <string name="request_content_example">Cavalier banni du Rohan, cherche roi PAS corrompu par Saroumane. Ceci est juste un long text pour tester si le textView wrap correctement le contenu du message</string>
+    <string name="request_by">Par Bilbon Sacquet</string>
+
+    <string name="lorem_ipsum_short">Lorem ipsum</string>
+    <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
 
     <string name="title_activity_container">ContainerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
