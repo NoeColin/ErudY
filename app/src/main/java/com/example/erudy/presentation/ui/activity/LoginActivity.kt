@@ -2,7 +2,6 @@ package com.example.erudy.presentation.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.erudy.R
 import com.example.erudy.presentation.ui.fragments.LoginFragment
