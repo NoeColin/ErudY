@@ -34,4 +34,10 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    
+    <string name="error_image_save">Erreur : Image non sauvegardée…</string>
+    <string name="error_register_all_fields">Tous les champs doivent être remplis.</string>
+    <string name="error_register_mail_not_valid">L\'adresse mail doit être une adresse valide.</string>
+    <string name="error_register_password_short">Le mot de passe doit contenir au moins 8 caractères.</string>
+    <string name="error_register_password_not_corresponding">Les mots de passe ne correspondent pas.</string>
 </resources>
