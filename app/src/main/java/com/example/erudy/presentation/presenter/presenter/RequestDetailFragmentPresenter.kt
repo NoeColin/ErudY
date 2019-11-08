@@ -8,8 +8,4 @@ class RequestDetailFragmentPresenter
 @Inject
 constructor(): BasePresenter<RequestDetailView>() {
 
-    fun signup() {
-        view.displayLoader()
-
-    }
 }
