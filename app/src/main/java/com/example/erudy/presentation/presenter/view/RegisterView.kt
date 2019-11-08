@@ -6,4 +6,5 @@ interface RegisterView: BaseView {
     fun displayLoader()
     fun hideLoader()
     fun showError(errorMessage: String)
+    fun goToMain()
 }
