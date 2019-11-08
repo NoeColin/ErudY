@@ -2,7 +2,6 @@ package com.example.erudy.presentation.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.erudy.R
 import com.example.erudy.presentation.ui.fragments.LoginFragment
@@ -27,7 +26,7 @@ class LoginActivity : AppCompatActivity(), HasSupportFragmentInjector {
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.activityContainer, LoginFragment())
+                .replace(R.id.nav_host_fragment, LoginFragment())
                 .commit()
         }
     }
@@ -35,14 +34,14 @@ class LoginActivity : AppCompatActivity(), HasSupportFragmentInjector {
     fun goToLogin() {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.activityContainer, LoginFragment())
+            .replace(R.id.nav_host_fragment, LoginFragment())
             .commit()
     }
 
     fun goToRegister() {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.activityContainer, RegisterFragment())
+            .replace(R.id.nav_host_fragment, RegisterFragment())
             .commit()
     }
 
