@@ -35,7 +35,7 @@
         android:id="@+id/send_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/send-128"
+        android:src="@drawable/send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/my_message" />
