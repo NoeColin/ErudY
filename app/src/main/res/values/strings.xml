@@ -28,6 +28,7 @@
     <string name="request_by">Par Bilbon Sacquet</string>
     <string name="by">Par %s</string>
     <string name="creation_date">le %s</string>
+    <string name="text_title">Titre :</string>
 
 
     <string name="lorem_ipsum_short">Lorem ipsum</string>
