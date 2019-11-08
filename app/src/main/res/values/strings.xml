@@ -17,7 +17,7 @@
     <string name="lastname_example">Sacquet</string>
     <string name="text_promotion">Promotion :</string>
     <string name="promotion_promotion">Communauté de l\'anneau</string>
-
+    <string name="already_register">Vous avez déjà un compte?</string>
     <string name="message">Saisir un message</string>
     <string name="my_message">Mon message</string>
     <string name="other_message">Son message</string>
