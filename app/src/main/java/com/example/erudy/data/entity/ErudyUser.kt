@@ -5,6 +5,18 @@ import com.parse.ParseUser
 
 class ErudyUser: ParseUser() {
 
+    var firstName: String?
+    get() = getString("firstName")
+    set(value) {
+        value?.let { put("firstName", it) }
+    }
+
+    var lastName: String?
+    get() = getString("lastName")
+    set(value) {
+        value?.let { put("lastName", it) }
+    }
+
     var requests: List<Request>?
     get() = getList<Request>("requests")
     set(value) {
