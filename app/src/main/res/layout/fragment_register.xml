@@ -15,13 +15,15 @@
 
     <ImageButton
         android:id="@+id/profile_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/default_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@drawable/default_profile" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"

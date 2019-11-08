@@ -2,10 +2,15 @@ package com.example.erudy
 
 import android.app.Activity
 import android.app.Application
+import com.example.erudy.data.entity.Conversation
+import com.example.erudy.data.entity.ErudyUser
+import com.example.erudy.data.entity.Message
+import com.example.erudy.data.entity.Request
 import com.example.erudy.di.AppModule
 import com.example.erudy.di.DaggerAppComponent
 import com.parse.Parse
 import com.parse.ParseInstallation
+import com.parse.ParseObject
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -41,6 +46,10 @@ class ErudYApp: Application(), HasActivityInjector {
     }
 
     fun initParse() {
+        ParseObject.registerSubclass(Conversation::class.java)
+        ParseObject.registerSubclass(ErudyUser::class.java)
+        ParseObject.registerSubclass(Message::class.java)
+        ParseObject.registerSubclass(Request::class.java)
         Parse.initialize(
             Parse.Configuration.Builder(this)
                 .applicationId(getString(R.string.appId))
