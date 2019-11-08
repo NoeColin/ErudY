@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity(), HasSupportFragmentInjector {
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.nav_host_fragment, LoginFragment())
+                .replace(R.id.activityContainer, LoginFragment())
                 .commit()
         }
     }
@@ -34,14 +34,14 @@ class LoginActivity : AppCompatActivity(), HasSupportFragmentInjector {
     fun goToLogin() {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.nav_host_fragment, LoginFragment())
+            .replace(R.id.activityContainer, LoginFragment())
             .commit()
     }
 
     fun goToRegister() {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.nav_host_fragment, RegisterFragment())
+            .replace(R.id.activityContainer, RegisterFragment())
             .commit()
     }
 
