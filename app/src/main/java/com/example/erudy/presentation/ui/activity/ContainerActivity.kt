@@ -1,5 +1,6 @@
 package com.example.erudy.presentation.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -54,9 +55,8 @@ class ContainerActivity : AppCompatActivity() {
     }
 
     fun gotToRequestDetail(idRequest: String) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.nav_host_fragment, RequestDetailFragment())
-            .commit()
+        var intent = Intent(this, RequestDetailActivity::class.java)
+        intent.putExtra("idRequest", idRequest)
+        startActivity(intent)
     }
 }
