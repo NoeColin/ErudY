@@ -23,15 +23,10 @@ import javax.inject.Inject
 
 
 class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
-    override fun showError(errorMessage: String) {
-        Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
-    }
-
     @Inject
     override lateinit var presenter: ProfileFragmentPresenter
+
     override val layoutId: Int = R.layout.fragment_profile
-
-
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
@@ -42,6 +37,7 @@ class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
         loader.visibility = View.VISIBLE
     }
 
+
     override fun hideLoader() {
         loader.visibility = View.GONE
     }
@@ -51,6 +47,10 @@ class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
         nameField.text = lastname
         emailField.text = email
         Glide.with(context!!).load(image).into(profileImage)
+    }
+
+    override fun showError(errorMessage: String) {
+        Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -38,7 +38,6 @@
             android:layout_marginTop="40dp"
             android:src="@drawable/default_profile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,10 +59,8 @@
             android:layout_marginTop="30dp"
             android:text="@string/text_email"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/nameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/nameField"
-            app:layout_constraintVertical_bias="0.044" />
+            app:layout_constraintTop_toBottomOf="@+id/nameField" />
 
         <TextView
             android:id="@+id/nameField"
