@@ -45,8 +45,6 @@ class RequestCreationFragment : BaseFragment<RequestCreationFragmentPresenter>()
     }
 
     override fun goToList() {
-        val intent = Intent(context, ContainerActivity::class.java)
-        startActivity(intent)
         activity?.finish()
     }
 
