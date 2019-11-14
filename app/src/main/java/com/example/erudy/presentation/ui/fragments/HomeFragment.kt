@@ -72,7 +72,6 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
     override fun goToRequestCreation() {
         val intent = Intent(context, RequestCreationActivity::class.java)
         startActivity(intent)
-        activity?.finish()
     }
 
     override fun goToRequestDetail(idRequest: String) {
