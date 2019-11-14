@@ -22,7 +22,8 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import javax.inject.Inject
 
 
-class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
+class ProfileFragment :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
+
     @Inject
     override lateinit var presenter: ProfileFragmentPresenter
 
@@ -32,11 +33,9 @@ class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
         super.onAttach(context)
     }
 
-
     override fun displayLoader() {
         loader.visibility = View.VISIBLE
     }
-
 
     override fun hideLoader() {
         loader.visibility = View.GONE
@@ -58,8 +57,6 @@ class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
         presenter.attach(this)
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -69,6 +66,5 @@ class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
             (activity as LoginActivity).goToRegister()
         }
     }
-
 
 }

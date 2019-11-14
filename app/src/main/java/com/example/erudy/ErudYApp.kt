@@ -9,9 +9,12 @@ import com.example.erudy.data.entity.Message
 import com.example.erudy.data.entity.Request
 import com.example.erudy.di.AppModule
 import com.example.erudy.di.DaggerAppComponent
+import com.example.erudy.utils.MediaLoader
 import com.parse.Parse
 import com.parse.ParseInstallation
 import com.parse.ParseObject
+import com.yanzhenjie.album.Album
+import com.yanzhenjie.album.AlbumConfig
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -35,6 +38,7 @@ class ErudYApp: Application(), HasActivityInjector, HasSupportFragmentInjector{
         initDagger()
         initTimber()
         initParse()
+        initAlbum()
     }
 
     override fun activityInjector(): AndroidInjector<Activity> = activityInjector
@@ -68,4 +72,11 @@ class ErudYApp: Application(), HasActivityInjector, HasSupportFragmentInjector{
         )
         ParseInstallation.getCurrentInstallation().saveInBackground()
     }
+
+    private fun initAlbum() {
+        Album.initialize(AlbumConfig.newBuilder(this)
+            .setAlbumLoader(MediaLoader())
+            .build())
+    }
+    
 }
