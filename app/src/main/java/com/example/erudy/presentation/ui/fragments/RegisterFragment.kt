@@ -71,9 +71,9 @@ class RegisterFragment : BaseFragment<RegisterFragmentPresenter>(), RegisterView
                     Durban.with(this)
                         // Che title of the UI.
                         .title("Crop")
-                        .statusBarColor(ContextCompat.getColor(context!!, R.color.colorPrimaryDark))
-                        .toolBarColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
-                        .navigationBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimaryDark))
+                        .statusBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimaryDark))
+                        .toolBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimary))
+                        .navigationBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimary))
                         // Image path list/array.
                         .inputImagePaths(it[0].path)
                         // Image output directory.
