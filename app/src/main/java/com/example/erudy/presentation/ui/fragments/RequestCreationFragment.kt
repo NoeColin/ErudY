@@ -9,10 +9,9 @@ import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
 import com.example.erudy.presentation.presenter.presenter.RequestCreationFragmentPresenter
 import com.example.erudy.presentation.presenter.view.RequestCreationView
-import com.example.erudy.presentation.ui.activity.MainActivity
+import com.example.erudy.presentation.ui.activity.ContainerActivity
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_request_creation.*
-import kotlinx.android.synthetic.main.request_item.*
 import javax.inject.Inject
 
 
@@ -46,7 +45,7 @@ class RequestCreationFragment : BaseFragment<RequestCreationFragmentPresenter>()
     }
 
     override fun goToList() {
-        val intent = Intent(context, MainActivity::class.java)
+        val intent = Intent(context, ContainerActivity::class.java)
         startActivity(intent)
         activity?.finish()
     }

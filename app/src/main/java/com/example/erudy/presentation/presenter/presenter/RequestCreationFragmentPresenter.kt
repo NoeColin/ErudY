@@ -25,7 +25,7 @@ constructor(var context: Context): BasePresenter<RequestCreationView>() {
         var newrequest = Request()
         newrequest.title = title
         newrequest.description = content
-        //newrequest.creator = currentUser.objectId
+        newrequest.owner = currentUser
 
 
         newrequest.saveInBackground {

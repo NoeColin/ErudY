@@ -7,4 +7,5 @@ interface HomeView: BaseView {
     fun hideLoader()
     fun showError(errorMessage: String)
     fun goToRequestDetail(idRequest: String)
+    fun goToRequestCreation()
 }
