@@ -4,6 +4,7 @@ import com.example.erudy.presentation.ui.activity.LoginActivity
 import com.example.erudy.presentation.ui.fragments.LoginFragment
 import com.example.erudy.presentation.ui.fragments.ProfileFragment
 import com.example.erudy.presentation.ui.fragments.RegisterFragment
+import com.example.erudy.presentation.ui.fragments.EditProfileFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -21,4 +22,7 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributeProfileFragment(): ProfileFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeEditProfileFragment(): EditProfileFragment
 }

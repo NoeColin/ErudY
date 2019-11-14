@@ -12,23 +12,23 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/firstnameField"
+            android:id="@+id/nameField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Jacob "
-            app:layout_constraintStart_toStartOf="@+id/firstnameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/firstnameLabel" />
+            android:text="Gandalf"
+            app:layout_constraintStart_toStartOf="@+id/nameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
 
         <TextView
-            android:id="@+id/firstnameLabel"
+            android:id="@+id/nameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:text="@string/text_lastname"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nameLabel"
+            app:layout_constraintStart_toEndOf="@+id/firstnameLabel"
             app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
         <ImageView
@@ -42,13 +42,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/nameLabel"
+            android:id="@+id/firstnameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:text="@string/text_firstname"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/firstnameLabel"
+            app:layout_constraintEnd_toStartOf="@+id/nameLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
@@ -59,24 +59,24 @@
             android:layout_marginTop="30dp"
             android:text="@string/text_email"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/nameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/nameField" />
+            app:layout_constraintStart_toStartOf="@+id/firstnameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/firstnameField" />
 
         <TextView
-            android:id="@+id/nameField"
+            android:id="@+id/firstnameField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Jean Sebastien Pierre "
-            app:layout_constraintStart_toStartOf="@+id/nameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+            android:text="Le Gris"
+            app:layout_constraintStart_toStartOf="@+id/firstnameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/firstnameLabel" />
 
         <TextView
             android:id="@+id/emailField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="blabla.yoloswag@ynov.com"
+            android:text="gandalf.legris@magicien.com"
             app:layout_constraintStart_toStartOf="@+id/emailLabel"
             app:layout_constraintTop_toBottomOf="@+id/emailLabel" />
 

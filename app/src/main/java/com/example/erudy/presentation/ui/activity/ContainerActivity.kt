@@ -1,8 +1,7 @@
 package com.example.erudy.presentation.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -14,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.example.erudy.R
+import com.example.erudy.presentation.ui.activity.ui.EditProfileActivity
 
 class ContainerActivity : AppCompatActivity() {
 
@@ -50,4 +50,9 @@ class ContainerActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    fun goToEditProfile() {
+        val intent = Intent(this, EditProfileActivity::class.java)
+        startActivity(intent)
+}
 }

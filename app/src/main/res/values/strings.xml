@@ -49,9 +49,11 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+    <string name="save_profile">Sauvegarder</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
+
     <string name="error_image_save">Erreur : Image non sauvegardée…</string>
     <string name="error_register_all_fields">Tous les champs doivent être remplis.</string>
     <string name="error_register_mail_not_valid">L\'adresse mail doit être une adresse valide.</string>
