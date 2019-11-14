@@ -18,6 +18,8 @@ class Request: ParseObject() {
         value?.let { put("description", it) }
     }
 
+    // TODO ajouter le créateur ici (et donc en bdd)
+    
     var conversations: List<Conversation>?
     get() = getList<Conversation>("conversations")
     set(value) {
