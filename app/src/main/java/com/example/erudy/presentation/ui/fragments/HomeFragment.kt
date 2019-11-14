@@ -46,6 +46,12 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
     }
 
+    override fun displayRequests(requests: List<Request>) {
+        val adapter = RequestAdapter(requests, this)
+        request_list.adapter = adapter
+        adapter.notifyDataSetChanged()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -55,19 +61,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
         val adapter = RequestAdapter(requestList, this)
         request_list.adapter = adapter
 
-        var query = ParseQuery.getQuery<Request>(Request::class.java)
-        query.include("title")
-        query.include("description")
-        query.include("owner")
-        query.findInBackground { requests, error ->
-            if (error != null) {
-                Toast.makeText(context, error.localizedMessage.toString(), Toast.LENGTH_LONG).show()
-            } else {
-                val adapter = RequestAdapter(requests, this)
-                request_list.adapter = adapter
-                adapter.notifyDataSetChanged()
-            }
-        }
+        presenter.loadRequests()
     }
 
     override fun goToRequestDetail(idRequest: String) {
@@ -76,6 +70,5 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
 
     override fun requestClicked(idRequest: String) {
         goToRequestDetail(idRequest)
-
     }
 }

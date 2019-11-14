@@ -4,8 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
+import com.example.erudy.data.entity.Request
 import com.example.erudy.presentation.presenter.presenter.RequestDetailFragmentPresenter
 import com.example.erudy.presentation.presenter.view.RequestDetailView
 import dagger.android.support.AndroidSupportInjection
@@ -22,6 +24,7 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter.attach(this)
+        presenter.loadRequestDetail(activity!!.intent.getStringExtra("idRequest"))
     }
 
     override fun onAttach(context: Context?) {
@@ -41,8 +44,11 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun displayRequest(request: Request) {
+        request_title.text = request.title
+        request_content.text = request.description
+        publisher.text = request.owner!!.fullName
+        Glide.with(context!!).load(request.owner!!.profileImage!!.url).into(publisher_picture)
     }
+    
 }
