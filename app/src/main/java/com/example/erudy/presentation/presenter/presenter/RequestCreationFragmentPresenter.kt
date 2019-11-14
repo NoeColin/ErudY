@@ -15,25 +15,25 @@ class RequestCreationFragmentPresenter
 constructor(var context: Context): BasePresenter<RequestCreationView>() {
 
     fun createRequest(title: String, content: String) {
-        var currentUser = ParseUser.getCurrentUser() as ErudyUser
+        val currentUser = ParseUser.getCurrentUser() as ErudyUser
 
-        if(title.isBlank() || content.isBlank()) {
+        if (title.isBlank() || content.isBlank()) {
             view.showError(context.getString(R.string.error_register_all_fields))
-        }
+        } else {
+            view.displayLoader()
 
+            val newRequest = Request()
+            newRequest.title = title
+            newRequest.description = content
+            newRequest.owner = currentUser
 
-        var newrequest = Request()
-        newrequest.title = title
-        newrequest.description = content
-        //newrequest.creator = currentUser.objectId
-
-
-        newrequest.saveInBackground {
-            view.hideLoader()
-            if (it == null) {
-                view.goToList()
-            } else {
-                view.showError(it.localizedMessage.toString())
+            newRequest.saveInBackground {
+                view.hideLoader()
+                if (it == null) {
+                    view.goToList()
+                } else {
+                    view.showError(it.localizedMessage.toString())
+                }
             }
         }
     }
