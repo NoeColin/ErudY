@@ -19,6 +19,9 @@ class ErudyUser: ParseUser() {
         value?.let { put("lastName", it) }
     }
 
+    val fullName: String
+        get() = "$firstName $lastName"
+
     var requests: List<Request>?
     get() = getList<Request>("requests")
     set(value) {

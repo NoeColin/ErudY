@@ -21,7 +21,7 @@ class RequestAdapter(private val requests: List<Request>, private val listener: 
 
     override fun onBindViewHolder(holder: RequestsViewHolder, position: Int) {
         val request: Request = requests[position]
-        holder.bind(request, position)
+        holder.bind(request)
     }
 
     class RequestsViewHolder(inflater: LayoutInflater,
@@ -39,18 +39,18 @@ class RequestAdapter(private val requests: List<Request>, private val listener: 
             creator = itemView.findViewById(R.id.request_creator)
         }
 
-        fun bind(request: Request, position: Int) {
+        fun bind(request: Request) {
             itemView.setOnClickListener {
-                listener.requestClicked(position)
+                listener.requestClicked(request.objectId)
             }
 
             title?.text = request.title
             content?.text = request.description
-            //creator?.text = request.creator
+            creator?.text = request.owner!!.fullName
         }
     }
 
     interface ClickOnRecycler {
-        fun requestClicked(idPosition: Int)
+        fun requestClicked(idRequest: String)
     }
 }

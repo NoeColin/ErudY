@@ -1,5 +1,6 @@
 package com.example.erudy.presentation.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.example.erudy.R
+import com.example.erudy.presentation.ui.fragments.RequestDetailFragment
 
 class ContainerActivity : AppCompatActivity() {
 
@@ -36,6 +38,7 @@ class ContainerActivity : AppCompatActivity() {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -49,5 +52,11 @@ class ContainerActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun gotToRequestDetail(idRequest: String) {
+        var intent = Intent(this, RequestDetailActivity::class.java)
+        intent.putExtra("idRequest", idRequest)
+        startActivity(intent)
     }
 }
