@@ -1,8 +1,10 @@
 package com.example.erudy.data.entity
 
+import com.parse.ParseClassName
 import com.parse.ParseFile
 import com.parse.ParseUser
 
+@ParseClassName("_User")
 class ErudyUser: ParseUser() {
 
     var firstName: String?

@@ -9,6 +9,7 @@ import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
 import com.example.erudy.presentation.presenter.presenter.LoginFragmentPresenter
 import com.example.erudy.presentation.presenter.view.LoginView
+import com.example.erudy.presentation.ui.activity.ContainerActivity
 import com.example.erudy.presentation.ui.activity.LoginActivity
 import com.example.erudy.presentation.ui.activity.MainActivity
 import dagger.android.support.AndroidSupportInjection
@@ -44,7 +45,7 @@ class LoginFragment : BaseFragment<LoginFragmentPresenter>(), LoginView {
     }
 
     override fun goToMain() {
-        val intent = Intent(context, MainActivity::class.java)
+        val intent = Intent(context, ContainerActivity::class.java)
         startActivity(intent)
         activity?.finish()
     }
