@@ -2,20 +2,20 @@ package com.example.erudy.presentation.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import android.view.Menu
 import com.example.erudy.R
-import com.example.erudy.presentation.ui.fragments.RequestDetailFragment
+import com.example.erudy.data.entity.ErudyUser
+import com.google.android.material.navigation.NavigationView
+import com.parse.ParseUser
 
 class ContainerActivity : AppCompatActivity() {
 
@@ -38,6 +38,14 @@ class ContainerActivity : AppCompatActivity() {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
+
+        val headerView = navView.getHeaderView(0)
+        val headerTitleView = headerView.findViewById<TextView>(R.id.nav_header_title)
+        val headerSubitleView = headerView.findViewById<TextView>(R.id.nav_header_subtitle)
+
+        val erudyUser = ParseUser.getCurrentUser() as ErudyUser
+        headerTitleView.text = erudyUser.fullName
+        headerSubitleView.text = erudyUser.email
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
