@@ -29,6 +29,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter.attach(this)
+        presenter.loadRequests()
     }
 
     override fun onAttach(context: Context?) {
@@ -63,11 +64,9 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
 
         request_list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        var requestList : List<Request> = ArrayList()
+        val requestList : List<Request> = ArrayList()
         val adapter = RequestAdapter(requestList, this)
         request_list.adapter = adapter
-
-        presenter.loadRequests()
     }
 
     override fun goToRequestCreation() {
