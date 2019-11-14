@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.example.erudy.R
+import com.example.erudy.presentation.ui.fragments.RequestDetailFragment
 
 class ContainerActivity : AppCompatActivity() {
 
@@ -36,6 +37,7 @@ class ContainerActivity : AppCompatActivity() {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -49,5 +51,12 @@ class ContainerActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun gotToRequestDetail(idRequest: String) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav_host_fragment, RequestDetailFragment())
+            .commit()
     }
 }

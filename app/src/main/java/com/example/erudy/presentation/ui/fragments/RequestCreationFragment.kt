@@ -1,6 +1,7 @@
 package com.example.erudy.presentation.ui.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,8 +9,10 @@ import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
 import com.example.erudy.presentation.presenter.presenter.RequestCreationFragmentPresenter
 import com.example.erudy.presentation.presenter.view.RequestCreationView
+import com.example.erudy.presentation.ui.activity.MainActivity
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_request_creation.*
+import kotlinx.android.synthetic.main.request_item.*
 import javax.inject.Inject
 
 
@@ -42,8 +45,21 @@ class RequestCreationFragment : BaseFragment<RequestCreationFragmentPresenter>()
         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
     }
 
+    override fun goToList() {
+        val intent = Intent(context, MainActivity::class.java)
+        startActivity(intent)
+        activity?.finish()
+    }
+
+    fun createRequest() {
+        presenter.createRequest(edit_request_creation_title.text.toString(), edit_request_creation_content.text.toString())
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        create_request_button.setOnClickListener {
+            createRequest()
+        }
     }
 }

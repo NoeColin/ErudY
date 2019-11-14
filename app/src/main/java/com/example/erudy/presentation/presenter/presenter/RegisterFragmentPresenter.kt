@@ -19,7 +19,7 @@ constructor(var context: Context): BasePresenter<RegisterView>() {
     fun signup(firstName: String, lastName: String, email: String, password: String, confirmPassword: String, bitmap: Bitmap) {
 
 
-        if (firstName.isBlank() && lastName.isBlank() && email.isBlank() && password.isBlank() && confirmPassword.isBlank()) {
+        if (firstName.isBlank() || lastName.isBlank() || email.isBlank() || password.isBlank() || confirmPassword.isBlank()) {
             view.showError(context.getString(R.string.error_register_all_fields))
         } else if (!email.isValidEmail()) {
             view.showError(context.getString(R.string.error_register_mail_not_valid))
@@ -53,7 +53,6 @@ constructor(var context: Context): BasePresenter<RegisterView>() {
                         view.showError(it.localizedMessage.toString())
                     }
                 }
-
             }
         }
     }

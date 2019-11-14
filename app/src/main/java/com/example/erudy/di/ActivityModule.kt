@@ -1,9 +1,7 @@
 package com.example.erudy.di
 
 import com.example.erudy.presentation.ui.activity.LoginActivity
-import com.example.erudy.presentation.ui.fragments.LoginFragment
-import com.example.erudy.presentation.ui.fragments.ProfileFragment
-import com.example.erudy.presentation.ui.fragments.RegisterFragment
+import com.example.erudy.presentation.ui.fragments.*
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -21,4 +19,13 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributeProfileFragment(): ProfileFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeHomeFragment(): HomeFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeRequestCreationFragment(): RequestCreationFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeRequestDetailFragment(): RequestDetailFragment
 }
