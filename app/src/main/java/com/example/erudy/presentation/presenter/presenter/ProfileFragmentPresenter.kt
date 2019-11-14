@@ -13,9 +13,12 @@ class ProfileFragmentPresenter
     fun loadProfile() {
         var currentUser = ParseUser.getCurrentUser() as ErudyUser
         currentUser.fetchInBackground { user: ErudyUser?, exception: ParseException? ->
-            if(exception == null) {
-                view.displayProfile(user!!.lastName.toString(), user.firstName.toString(), user.email.toString(), user.profileImage!!.url)
-                view.hideLoader()
+            view.hideLoader()
+            user?.let {
+                view.displayProfile(it.lastName.toString(), it.firstName.toString(), it.email.toString(), it.profileImage!!.url)
+            }
+            exception?.let {
+                view.showError(it.localizedMessage.toString())
             }
         }
     }

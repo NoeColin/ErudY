@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 
 import com.example.erudy.R
@@ -22,6 +23,9 @@ import javax.inject.Inject
 
 
 class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
+    override fun showError(errorMessage: String) {
+        Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
+    }
 
     @Inject
     override lateinit var presenter: ProfileFragmentPresenter
