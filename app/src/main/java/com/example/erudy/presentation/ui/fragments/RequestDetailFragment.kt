@@ -50,5 +50,5 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
         publisher.text = request.owner!!.fullName
         Glide.with(context!!).load(request.owner!!.profileImage!!.url).into(publisher_picture)
     }
-    
+
 }
