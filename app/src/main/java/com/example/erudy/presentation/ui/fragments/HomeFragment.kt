@@ -1,6 +1,7 @@
 package com.example.erudy.presentation.ui.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.textclassifier.TextLinks
@@ -13,6 +14,7 @@ import com.example.erudy.data.entity.Request
 import com.example.erudy.presentation.presenter.presenter.HomeFragmentPresenter
 import com.example.erudy.presentation.presenter.view.HomeView
 import com.example.erudy.presentation.ui.activity.ContainerActivity
+import com.example.erudy.presentation.ui.activity.RequestCreationActivity
 import com.example.erudy.presentation.ui.adapter.RequestAdapter
 import com.parse.ParseQuery
 import dagger.android.support.AndroidSupportInjection
@@ -27,6 +29,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter.attach(this)
+        presenter.loadRequests()
     }
 
     override fun onAttach(context: Context?) {
@@ -55,13 +58,21 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        new_request_button.setOnClickListener {
+            goToRequestCreation()
+        }
+
         request_list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        var requestList : List<Request> = ArrayList()
+        val requestList : List<Request> = ArrayList()
         val adapter = RequestAdapter(requestList, this)
         request_list.adapter = adapter
+    }
 
-        presenter.loadRequests()
+    override fun goToRequestCreation() {
+        val intent = Intent(context, RequestCreationActivity::class.java)
+        startActivity(intent)
+        activity?.finish()
     }
 
     override fun goToRequestDetail(idRequest: String) {

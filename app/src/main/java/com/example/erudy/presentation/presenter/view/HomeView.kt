@@ -9,4 +9,5 @@ interface HomeView: BaseView {
     fun showError(errorMessage: String)
     fun goToRequestDetail(idRequest: String)
     fun displayRequests(requests: List<Request>)
+    fun goToRequestCreation()
 }
