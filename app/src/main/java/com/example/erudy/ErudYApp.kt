@@ -31,8 +31,6 @@ class ErudYApp: Application(), HasActivityInjector, HasSupportFragmentInjector{
     @Inject
     lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
-
-
     override fun onCreate() {
         super.onCreate()
         initDagger()

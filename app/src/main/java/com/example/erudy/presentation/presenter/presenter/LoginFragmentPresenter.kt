@@ -1,5 +1,7 @@
 package com.example.erudy.presentation.presenter.presenter
 
+import android.content.Context
+import com.example.erudy.R
 import com.example.erudy.base.BasePresenter
 import com.example.erudy.presentation.presenter.view.LoginView
 import com.parse.ParseUser
@@ -7,7 +9,7 @@ import javax.inject.Inject
 
 class LoginFragmentPresenter
 @Inject
-constructor(): BasePresenter<LoginView>() {
+constructor(var context: Context): BasePresenter<LoginView>() {
 
     fun signin(userName: String, password: String) {
         view.displayLoader()
@@ -20,6 +22,18 @@ constructor(): BasePresenter<LoginView>() {
                 view.showError(it.localizedMessage.toString())
             }
 
+        }
+    }
+
+    fun forgetPassword(mail: String) {
+        view.displayLoader()
+        ParseUser.requestPasswordResetInBackground(mail) { error ->
+            view.hideLoader()
+            if (error == null) {
+                view.showMessage(context.getString(R.string.email_sent))
+            } else {
+                view.showError(error.localizedMessage.toString())
+            }
         }
     }
 }
