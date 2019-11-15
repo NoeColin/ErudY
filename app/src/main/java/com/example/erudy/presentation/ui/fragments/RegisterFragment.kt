@@ -15,7 +15,6 @@ import com.example.erudy.presentation.presenter.presenter.RegisterFragmentPresen
 import com.example.erudy.presentation.presenter.view.RegisterView
 import com.example.erudy.presentation.ui.activity.ContainerActivity
 import com.example.erudy.presentation.ui.activity.LoginActivity
-import com.example.erudy.presentation.ui.activity.MainActivity
 import com.yanzhenjie.album.Album
 import com.yanzhenjie.durban.Controller
 import com.yanzhenjie.durban.Durban
