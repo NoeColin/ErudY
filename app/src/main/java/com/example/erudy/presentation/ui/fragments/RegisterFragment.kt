@@ -15,7 +15,6 @@ import com.example.erudy.presentation.presenter.presenter.RegisterFragmentPresen
 import com.example.erudy.presentation.presenter.view.RegisterView
 import com.example.erudy.presentation.ui.activity.ContainerActivity
 import com.example.erudy.presentation.ui.activity.LoginActivity
-import com.example.erudy.presentation.ui.activity.MainActivity
 import com.yanzhenjie.album.Album
 import com.yanzhenjie.durban.Controller
 import com.yanzhenjie.durban.Durban
@@ -71,9 +70,6 @@ class RegisterFragment : BaseFragment<RegisterFragmentPresenter>(), RegisterView
                     Durban.with(this)
                         // Che title of the UI.
                         .title("Crop")
-                        .statusBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimaryDark))
-                        .toolBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimary))
-                        .navigationBarColor(ContextCompat.getColor(context!!, R.color.colorErudYPrimary))
                         // Image path list/array.
                         .inputImagePaths(it[0].path)
                         // Image output directory.
