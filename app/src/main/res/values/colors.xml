@@ -10,7 +10,7 @@
 
     <color name="colorErudYPrimary">#731D4C</color>
     <color name="colorErudYPrimaryDark">#390E42</color>
-    <color name="colorErudYBackground">#743CC2</color>
+    <color name="colorErudYBackground">#731D4C</color>
     <color name="colorErudYFour">#C2271D</color>
     <color name="colorErudYLight">#FF743D</color>
 </resources>
