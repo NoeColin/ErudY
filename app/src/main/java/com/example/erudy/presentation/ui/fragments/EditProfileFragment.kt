@@ -37,7 +37,8 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
     override val layoutId: Int = R.layout.fragment_edit_profile
 
     override fun goToProfile() {
-        (activity as EditProfileActivity).finish()
+        Toast.makeText(context, getText(R.string.confirm_save), Toast.LENGTH_LONG).show()
+        activity?.finish()
     }
 
     // private var listener: OnFragmentInteractionListener? = null
