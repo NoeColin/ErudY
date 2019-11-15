@@ -22,7 +22,7 @@
     <string name="my_message">Mon message</string>
     <string name="other_message">Son message</string>
 
-    <string name="published_by">Publié par :</string>
+    <string name="published_by">Publié par : </string>
     <string name="request_title_example">Nouveau roi</string>
     <string name="request_content_example">Cavalier banni du Rohan, cherche roi PAS corrompu par Saroumane. Ceci est juste un long text pour tester si le textView wrap correctement le contenu du message</string>
     <string name="request_by">Par Bilbon Sacquet</string>
