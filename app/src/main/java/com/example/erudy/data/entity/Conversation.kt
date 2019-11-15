@@ -18,9 +18,9 @@ class Conversation: ParseObject() {
         value?.let { put("user2", it) }
     }
 
-    var messages: List<Message>?
-    get() = getList<Message>("messages")
+    var request: Request?
+    get() = get("request") as Request
     set(value) {
-        value?.let { put("messages", it) }
+        value?.let { put("request", it) }
     }
 }

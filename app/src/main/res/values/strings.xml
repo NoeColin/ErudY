@@ -61,6 +61,8 @@
     <string name="error_register_password_not_corresponding">Les mots de passe ne correspondent pas.</string>
     <string name="error_new_request_all_fields">Tous les champs doivent être remplis.</string>
 
+    <string name="start_conversation">Conversation</string>
+
     <string name="error_save">Error. Try again later.</string>
 
 
