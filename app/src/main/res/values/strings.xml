@@ -64,4 +64,7 @@
     <string name="confirm_save">Modification enregistrée.</string>
     <string name="error_save">Error. Try again later.</string>
 
+
+    <string name="email_sent">Un mail contenant un lien de réinitialisation vous a été envoyé.</string>
+
 </resources>
