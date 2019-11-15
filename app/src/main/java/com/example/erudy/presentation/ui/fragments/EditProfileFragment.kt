@@ -26,7 +26,6 @@ import kotlinx.android.synthetic.main.fragment_edit_profile.edit_first_name
 import kotlinx.android.synthetic.main.fragment_edit_profile.edit_last_name
 import kotlinx.android.synthetic.main.fragment_edit_profile.loader
 import kotlinx.android.synthetic.main.fragment_edit_profile.profile_image
-import kotlinx.android.synthetic.main.fragment_register.*
 import javax.inject.Inject
 
 private const val ARG_PARAM1 = "param1"
@@ -79,11 +78,6 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
         super.onAttach(context)
     }
 
-    override fun onDetach() {
-        super.onDetach()
-       // listener = null
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter.attach(this)
@@ -97,7 +91,6 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
         save_button.setOnClickListener {
             saveUpdate()
         }
-
 
         profile_image.setOnClickListener {
             Album.image(this) // Image and video mix options.
@@ -138,7 +131,6 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
                         .start()
                 }
                 .onCancel {
-
                 }
                 .start()
         }
@@ -153,7 +145,7 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
                     val mImageList = Durban.parseResult(data!!)
                     profile_image.setImageURI(mImageList[0].toUri())
                 } else {
-                    Toast.makeText(context, "Error: Try again later", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "@string/error_save", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -163,7 +155,6 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
         val bitmap = (profile_image.drawable.current as BitmapDrawable).bitmap
         presenter.updateProfile(edit_first_name.text.toString(), edit_last_name.text.toString(), edit_email.text.toString(), bitmap)
     }
-
 
 
     companion object {
@@ -185,5 +176,4 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
                 }
             }
     }
-
 }

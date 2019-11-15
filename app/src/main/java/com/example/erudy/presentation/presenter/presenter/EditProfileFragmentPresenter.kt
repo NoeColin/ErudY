@@ -32,7 +32,6 @@ class EditProfileFragmentPresenter
 
     fun updateProfile(firstName: String, lastName: String, email: String, bitmap: Bitmap) {
 
-
         if (firstName.isBlank() && lastName.isBlank() && email.isBlank()) {
             view.showError(context.getString(R.string.error_register_all_fields))
         } else if (!email.isValidEmail()) {
@@ -62,9 +61,7 @@ class EditProfileFragmentPresenter
                         view.showError(it.localizedMessage.toString())
                     }
                 }
-
             }
         }
     }
-
 }
