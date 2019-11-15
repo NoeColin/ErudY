@@ -68,6 +68,7 @@ class ErudYApp: Application(), HasActivityInjector, HasSupportFragmentInjector{
                 .server(getString(R.string.serverUrl))
                 .build()
         )
+        Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG)
         ParseInstallation.getCurrentInstallation().saveInBackground()
     }
 

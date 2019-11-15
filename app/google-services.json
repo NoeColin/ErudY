@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "239738463682",
+    "firebase_url": "https://erudy-673b2.firebaseio.com",
+    "project_id": "erudy-673b2",
+    "storage_bucket": "erudy-673b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239738463682:android:28d5f1eab2e143c130625b",
+        "android_client_info": {
+          "package_name": "com.erudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239738463682-doer6jav704n3j39s5tcd3fh368l9q1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0S1ytn1ILl-KV-Wlbsa8zt8srCoLrDMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239738463682-doer6jav704n3j39s5tcd3fh368l9q1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
