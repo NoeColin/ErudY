@@ -113,8 +113,6 @@ class RegisterFragment : BaseFragment<RegisterFragmentPresenter>(), RegisterView
                 if (resultCode == RESULT_OK) {
                     val mImageList = Durban.parseResult(data!!)
                     profile_image.setImageURI(mImageList[0].toUri())
-                } else {
-                    // TODO other...
                 }
             }
         }
