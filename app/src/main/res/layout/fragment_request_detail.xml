@@ -45,10 +45,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/publisher" />
 
-
     <TextView
         android:id="@+id/publisher"
-        android:layout_width="202dp"
+        android:layout_width="200dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:text="@string/complete_name_example"
@@ -59,12 +58,12 @@
         android:id="@+id/publisher_picture"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="200dp"
         android:layout_marginBottom="40dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/default_profile"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scaleType="fitCenter" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
         android:id="@+id/loader"
@@ -77,4 +76,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/start_conversation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/start_conversation"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorErudYBackground"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/publisher_picture"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

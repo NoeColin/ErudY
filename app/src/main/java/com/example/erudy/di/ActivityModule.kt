@@ -1,5 +1,6 @@
 package com.example.erudy.di
 
+import com.example.erudy.presentation.ui.activity.ChatActivity
 import com.example.erudy.presentation.ui.activity.LoginActivity
 import com.example.erudy.presentation.ui.activity.RequestCreationActivity
 import com.example.erudy.presentation.ui.activity.RequestDetailActivity
@@ -36,4 +37,10 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributeRequestDetailFragment(): RequestDetailFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeChatActivity(): ChatActivity
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeChatFragment(): ChatFragment
 }

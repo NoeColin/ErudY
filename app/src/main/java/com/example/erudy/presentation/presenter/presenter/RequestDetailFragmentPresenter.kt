@@ -1,6 +1,8 @@
 package com.example.erudy.presentation.presenter.presenter
 
 import com.example.erudy.base.BasePresenter
+import com.example.erudy.data.entity.Conversation
+import com.example.erudy.data.entity.ErudyUser
 import com.example.erudy.data.entity.Request
 import com.example.erudy.presentation.presenter.view.RequestDetailView
 import com.parse.ParseException
@@ -24,6 +26,47 @@ constructor(): BasePresenter<RequestDetailView>() {
             }
             request?.let {
                 view.displayRequest(request)
+            }
+        }
+    }
+
+    fun checkConv(owner: ErudyUser?, answerer: ErudyUser, request: Request) {
+
+        view.displayLoader()
+        var query = ParseQuery<Conversation>(Conversation::class.java)
+        query.whereEqualTo("user1", owner)
+        query.whereEqualTo("user2", answerer)
+        query.whereEqualTo("request", request)
+
+        query.findInBackground { conversation, error: ParseException? ->
+
+            error?.let {
+                view.showError(it.localizedMessage.toString())
+            }
+            conversation?.let {
+                if (it.isEmpty()) {
+                    createConv(owner!!, answerer, request)
+                } else {
+                    view.hideLoader()
+                    view.goToChat(it.first())
+                }
+            }
+        }
+    }
+
+    fun createConv(owner: ErudyUser, answerer: ErudyUser, request: Request) {
+        var conversation = Conversation()
+        conversation.user1 = owner
+        conversation.user2 = answerer
+        conversation.request = request
+
+        conversation.saveInBackground {
+            view.hideLoader()
+            if (it == null) {
+                view.hideLoader()
+                view.goToChat(conversation)
+            } else {
+                view.showError(it.localizedMessage.toString())
             }
         }
     }

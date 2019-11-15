@@ -23,4 +23,10 @@ class Conversation: ParseObject() {
     set(value) {
         value?.let { put("messages", it) }
     }
+
+    var request: Request?
+    get() = get("request") as Request
+    set(value) {
+        value?.let { put("request", it) }
+    }
 }

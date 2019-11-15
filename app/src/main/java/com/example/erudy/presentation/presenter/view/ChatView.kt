@@ -2,13 +2,13 @@ package com.example.erudy.presentation.presenter.view
 
 import com.example.erudy.base.BaseView
 import com.example.erudy.data.entity.Conversation
-import com.example.erudy.data.entity.Request
+import com.example.erudy.data.entity.Message
 
-interface RequestDetailView: BaseView {
+interface ChatView: BaseView {
     fun displayLoader()
     fun hideLoader()
     fun showError(errorMessage: String)
-    fun displayRequest(request: Request)
-    fun checkConv(request: Request)
-    fun goToChat(conversation: Conversation)
+    fun displayMessages(messages: List<Message>)
+    fun createMessage()
+    fun refreshChat()
 }
