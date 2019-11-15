@@ -1,6 +1,7 @@
 package com.example.erudy.presentation.ui.fragments
 
 import android.content.Context
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -10,12 +11,15 @@ import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
 import com.example.erudy.presentation.presenter.presenter.EditProfileFragmentPresenter
 import com.example.erudy.presentation.presenter.view.EditProfileView
-import com.example.erudy.presentation.ui.activity.ContainerActivity
-import com.example.erudy.presentation.ui.activity.ui.EditProfileActivity
+import com.example.erudy.presentation.ui.activity.EditProfileActivity
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_edit_profile.edit_email
+import kotlinx.android.synthetic.main.fragment_edit_profile.edit_first_name
+import kotlinx.android.synthetic.main.fragment_edit_profile.edit_last_name
+import kotlinx.android.synthetic.main.fragment_edit_profile.loader
+import kotlinx.android.synthetic.main.fragment_edit_profile.profile_image
+import kotlinx.android.synthetic.main.fragment_register.*
 import javax.inject.Inject
 
 private const val ARG_PARAM1 = "param1"
@@ -27,8 +31,8 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
     override lateinit var presenter: EditProfileFragmentPresenter
 
     private var param1: String? = null
-    private var param2: String? = null
 
+    private var param2: String? = null
     override val layoutId: Int = R.layout.fragment_edit_profile
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +41,10 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
+
+    override fun goToProfile() {
+        (activity as EditProfileActivity).finish()
     }
 
     // private var listener: OnFragmentInteractionListener? = null
@@ -49,10 +57,10 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
     }
 
     override fun displayProfile(lastname: String, firstName: String, email: String, image: String) {
-        input_last_name.text = lastname
-        input_first_name.text = firstName
-        input_email.text = email
-        Glide.with(context!!).load(image).into(profileImage)
+        edit_last_name.setText(lastname)
+        edit_first_name.setText(firstName)
+        edit_email.setText(email)
+        Glide.with(context!!).load(image).into(profile_image)
     }
 
     override fun showError(errorMessage: String) {
@@ -80,8 +88,13 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
         presenter.loadProfile()
 
         save_button.setOnClickListener {
-            (activity as EditProfileActivity).saveProfile()
+            saveUpdate()
         }
+    }
+
+    fun saveUpdate() {
+        val bitmap = (profile_image.drawable.current as BitmapDrawable).bitmap
+        presenter.updateProfile(edit_first_name.text.toString(), edit_last_name.text.toString(), edit_email.text.toString(), bitmap)
     }
 
 

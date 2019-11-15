@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.example.erudy.R
-import com.example.erudy.presentation.ui.activity.ui.EditProfileActivity
 
 class ContainerActivity : AppCompatActivity() {
 

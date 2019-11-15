@@ -50,7 +50,7 @@ class RegisterFragment : BaseFragment<RegisterFragmentPresenter>(), RegisterView
         login.setOnClickListener {
             (activity as LoginActivity).goToLogin()
         }
-        save_button.setOnClickListener {
+        register_button.setOnClickListener {
             signup()
         }
     }

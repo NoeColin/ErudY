@@ -7,4 +7,5 @@ interface EditProfileView: BaseView {
     fun hideLoader()
     fun displayProfile(lastname : String, firstName: String, email : String, image : String)
     fun showError(errorMessage: String)
+    fun goToProfile()
 }

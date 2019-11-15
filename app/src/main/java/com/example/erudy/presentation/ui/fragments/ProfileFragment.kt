@@ -65,5 +65,10 @@ class ProfileFragment() :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        presenter.loadProfile()
+    }
+
 
 }

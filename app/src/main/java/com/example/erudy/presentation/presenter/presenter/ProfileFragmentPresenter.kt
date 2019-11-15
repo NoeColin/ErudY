@@ -1,10 +1,16 @@
 package com.example.erudy.presentation.presenter.presenter
 
+import android.content.Context
+import android.graphics.Bitmap
+import com.example.erudy.R
 import com.example.erudy.base.BasePresenter
 import com.example.erudy.data.entity.ErudyUser
 import com.example.erudy.presentation.presenter.view.ProfileView
+import com.example.erudy.utils.isValidEmail
 import com.parse.ParseException
+import com.parse.ParseFile
 import com.parse.ParseUser
+import java.io.ByteArrayOutputStream
 import javax.inject.Inject
 
 class ProfileFragmentPresenter
