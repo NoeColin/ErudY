@@ -19,7 +19,4 @@ class EditProfileActivity : AppCompatActivity() {
         }
     }
 
-    fun saveProfile(){
-
-    }
 }

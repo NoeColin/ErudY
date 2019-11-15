@@ -28,26 +28,13 @@ import kotlinx.android.synthetic.main.fragment_edit_profile.loader
 import kotlinx.android.synthetic.main.fragment_edit_profile.profile_image
 import javax.inject.Inject
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditProfileView {
     @Inject
     override lateinit var presenter: EditProfileFragmentPresenter
 
-    private var param1: String? = null
-
-    private var param2: String? = null
     override val layoutId: Int = R.layout.fragment_edit_profile
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun goToProfile() {
         (activity as EditProfileActivity).finish()
@@ -157,23 +144,5 @@ class EditProfileFragment : BaseFragment<EditProfileFragmentPresenter>(), EditPr
     }
 
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment editProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EditProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

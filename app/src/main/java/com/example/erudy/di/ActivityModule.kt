@@ -1,5 +1,6 @@
 package com.example.erudy.di
 
+import com.example.erudy.presentation.ui.activity.EditProfileActivity
 import com.example.erudy.presentation.ui.activity.LoginActivity
 import com.example.erudy.presentation.ui.activity.RequestCreationActivity
 import com.example.erudy.presentation.ui.activity.RequestDetailActivity
@@ -25,6 +26,9 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributeProfileFragment(): ProfileFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeEditProfileActivity(): EditProfileActivity
 
     @ContributesAndroidInjector
     internal abstract fun contributeEditProfileFragment(): EditProfileFragment
