@@ -11,4 +11,5 @@ interface ChatView: BaseView {
     fun displayMessages(messages: List<Message>)
     fun createMessage()
     fun refreshChat()
+    fun clearMessageInput()
 }

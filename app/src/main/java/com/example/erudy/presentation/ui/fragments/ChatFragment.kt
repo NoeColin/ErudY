@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.fragment_chat.*
 import javax.inject.Inject
 
 class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresenter>(), ChatView {
+
     @Inject
     override lateinit var presenter: ChatFragmentPresenter
     override val layoutId: Int = R.layout.fragment_chat
@@ -30,6 +31,20 @@ class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresen
     override fun onAttach(context: Context?) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        send_message_button.setOnClickListener {
+            createMessage()
+        }
+
+        message_list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+
+        val messageList : List<Message> = ArrayList()
+        val adapter = ChatAdapter(messageList)
+        message_list.adapter = adapter
     }
 
     override fun displayLoader() {
@@ -54,21 +69,11 @@ class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresen
         presenter.createMessage(my_message.text.toString(), conversationId)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        send_message_button.setOnClickListener {
-            createMessage()
-        }
-
-        message_list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-
-        val messageList : List<Message> = ArrayList()
-        val adapter = ChatAdapter(messageList)
-        message_list.adapter = adapter
-    }
-
     override fun refreshChat() {
         presenter.loadMessages(conversationId)
+    }
+
+    override fun clearMessageInput() {
+        my_message.setText("")
     }
 }

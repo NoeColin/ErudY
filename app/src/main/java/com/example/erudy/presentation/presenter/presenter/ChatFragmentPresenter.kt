@@ -37,22 +37,21 @@ constructor(var context: Context): BasePresenter<ChatView>() {
                 }
             }
             error?.let {
+                view.hideLoader()
                 view.showError(it.localizedMessage.toString())
             }
         }
     }
 
     fun createMessage(message: String, conversationId: String) {
-        val currentUser = ParseUser.getCurrentUser() as ErudyUser
 
-        if (message.isBlank()) {
-            view.showError(context.getString(R.string.error_register_all_fields))
-        } else {
+        if (message.isNotBlank()) {
             view.displayLoader()
 
             var query = ParseQuery.getQuery(Conversation::class.java)
             query.getInBackground(conversationId) {conversation: Conversation?, error: ParseException? ->
                 conversation?.let {
+                    val currentUser = ParseUser.getCurrentUser() as ErudyUser
                     val newMessage = Message()
                     newMessage.content = message
                     newMessage.conversation = it
@@ -62,6 +61,7 @@ constructor(var context: Context): BasePresenter<ChatView>() {
                         view.hideLoader()
                         if (it == null) {
                             loadMessages(newMessage.conversation!!.objectId)
+                            view.clearMessageInput()
                         } else {
                             view.showError(it.localizedMessage.toString())
                         }

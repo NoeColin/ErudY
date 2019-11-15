@@ -15,7 +15,7 @@ constructor(): BasePresenter<RequestDetailView>() {
 
     fun loadRequestDetail(idrequest: String?) {
         view.displayLoader()
-        var query = ParseQuery<Request>(Request::class.java)
+        val query = ParseQuery<Request>(Request::class.java)
         query.include("title")
         query.include("description")
         query.include("owner")
@@ -55,7 +55,7 @@ constructor(): BasePresenter<RequestDetailView>() {
     }
 
     fun createConv(owner: ErudyUser, answerer: ErudyUser, request: Request) {
-        var conversation = Conversation()
+        val conversation = Conversation()
         conversation.user1 = owner
         conversation.user2 = answerer
         conversation.request = request
@@ -63,7 +63,6 @@ constructor(): BasePresenter<RequestDetailView>() {
         conversation.saveInBackground {
             view.hideLoader()
             if (it == null) {
-                view.hideLoader()
                 view.goToChat(conversation)
             } else {
                 view.showError(it.localizedMessage.toString())

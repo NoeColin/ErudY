@@ -10,7 +10,10 @@
     <EditText
         android:id="@+id/my_message"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:padding="4dp"
         android:background="@color/colorWhite"
         android:gravity="center_vertical"
         android:hint="@string/message"
@@ -26,10 +29,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/my_message"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/send_message_button"

@@ -51,10 +51,6 @@ class RequestDetailFragment : BaseFragment<RequestDetailFragmentPresenter>(), Re
         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun checkConv(request: Request) {
         presenter.checkConv(request.owner, ParseUser.getCurrentUser() as ErudyUser, request)
     }
