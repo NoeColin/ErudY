@@ -38,32 +38,31 @@
         android:id="@+id/published_by"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="8dp"
         android:gravity="end"
         android:text="@string/published_by"
-        app:layout_constraintEnd_toStartOf="@+id/publisher"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/publisher" />
+        app:layout_constraintBottom_toTopOf="@+id/publisher_picture"/>
 
     <TextView
         android:id="@+id/publisher"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:text="@string/complete_name_example"
-        app:layout_constraintBottom_toTopOf="@+id/publisher_picture"
-        app:layout_constraintStart_toStartOf="@+id/publisher_picture" />
+        app:layout_constraintTop_toTopOf="@+id/published_by"
+        app:layout_constraintStart_toEndOf="@+id/published_by" />
 
     <ImageView
         android:id="@+id/publisher_picture"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
         android:scaleType="fitCenter"
         android:src="@drawable/default_profile"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/loader"
@@ -86,7 +85,7 @@
         android:background="@color/colorErudYBackground"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/publisher_picture"
