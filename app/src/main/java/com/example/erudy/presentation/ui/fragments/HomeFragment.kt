@@ -69,6 +69,11 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeView, RequestAda
         request_list.adapter = adapter
     }
 
+    override fun onResume() {
+        super.onResume()
+        presenter.loadRequests()
+    }
+
     override fun goToRequestCreation() {
         val intent = Intent(context, RequestCreationActivity::class.java)
         startActivity(intent)
