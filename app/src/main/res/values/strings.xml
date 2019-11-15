@@ -49,6 +49,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+    <string name="save_profile">Sauvegarder</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -58,4 +60,8 @@
     <string name="error_register_password_short">Le mot de passe doit contenir au moins 8 caractères.</string>
     <string name="error_register_password_not_corresponding">Les mots de passe ne correspondent pas.</string>
     <string name="error_new_request_all_fields">Tous les champs doivent être remplis.</string>
+
+    <string name="error_save">Error. Try again later.</string>
+
+
 </resources>

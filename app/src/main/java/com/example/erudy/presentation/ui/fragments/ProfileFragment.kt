@@ -1,13 +1,8 @@
 package com.example.erudy.presentation.ui.fragments
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 
@@ -15,7 +10,7 @@ import com.example.erudy.R
 import com.example.erudy.base.BaseFragment
 import com.example.erudy.presentation.presenter.presenter.ProfileFragmentPresenter
 import com.example.erudy.presentation.presenter.view.ProfileView
-import com.example.erudy.presentation.ui.activity.LoginActivity
+import com.example.erudy.presentation.ui.activity.ContainerActivity
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_login.loader
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -42,8 +37,8 @@ class ProfileFragment :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
     }
 
     override fun displayProfile(lastname: String, firstName: String, email: String, image: String) {
-        firstnameField.text = firstName
         nameField.text = lastname
+        firstnameField.text = firstName
         emailField.text = email
         Glide.with(context!!).load(image).into(profileImage)
     }
@@ -60,11 +55,17 @@ class ProfileFragment :BaseFragment<ProfileFragmentPresenter>(), ProfileView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            presenter.loadProfile()
+        presenter.loadProfile()
 
         editButton.setOnClickListener {
-            (activity as LoginActivity).goToRegister()
+            (activity as ContainerActivity).goToEditProfile()
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.loadProfile()
+    }
+
 
 }

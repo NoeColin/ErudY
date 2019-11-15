@@ -67,4 +67,9 @@ class ContainerActivity : AppCompatActivity() {
         intent.putExtra("idRequest", idRequest)
         startActivity(intent)
     }
+
+    fun goToEditProfile() {
+        val intent = Intent(this, EditProfileActivity::class.java)
+        startActivity(intent)
+}
 }
