@@ -42,7 +42,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_request">Demandes</string>
     <string name="menu_profile">Profil</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
@@ -61,7 +61,7 @@
     <string name="error_register_password_not_corresponding">Les mots de passe ne correspondent pas.</string>
     <string name="error_new_request_all_fields">Tous les champs doivent être remplis.</string>
 
+    <string name="confirm_save">Modification enregistrée.</string>
     <string name="error_save">Error. Try again later.</string>
-
 
 </resources>
