@@ -7,4 +7,5 @@ interface LoginView: BaseView {
     fun hideLoader()
     fun showError(errorMessage: String)
     fun goToMain()
+    fun showMessage(message: String)
 }
