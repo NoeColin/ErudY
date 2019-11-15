@@ -16,7 +16,7 @@
             android:id="@+id/nameField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="Gandalf"
             app:layout_constraintStart_toStartOf="@+id/nameLabel"
             app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
@@ -67,7 +67,7 @@
             android:id="@+id/firstnameField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="Le Gris"
             app:layout_constraintStart_toStartOf="@+id/firstnameLabel"
             app:layout_constraintTop_toBottomOf="@+id/firstnameLabel" />
@@ -76,7 +76,7 @@
             android:id="@+id/emailField"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="gandalf.legris@magicien.com"
             app:layout_constraintStart_toStartOf="@+id/emailLabel"
             app:layout_constraintTop_toBottomOf="@+id/emailLabel" />

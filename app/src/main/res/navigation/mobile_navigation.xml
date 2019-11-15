@@ -8,36 +8,21 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.erudy.presentation.ui.fragments.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_request"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_profile"
-        android:name="com.example.erudy.presentation.ui.fragments.ProfileFragment"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_profile" />
+    android:id="@+id/nav_profile"
+    android:name="com.example.erudy.presentation.ui.fragments.ProfileFragment"
+    android:label="@string/menu_profile"
+    tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.erudy.presentation.ui.activity.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_conversation"
+        android:name="com.example.erudy.presentation.ui.fragments.HomeFragment"
+        android:label="@string/menu_conversations"
+        tools:layout="@layout/fragment_home"
+        />
 
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.erudy.presentation.ui.activity.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.erudy.presentation.ui.activity.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.erudy.presentation.ui.activity.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>

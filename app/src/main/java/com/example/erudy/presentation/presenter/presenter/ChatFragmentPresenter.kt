@@ -68,6 +68,7 @@ constructor(var context: Context): BasePresenter<ChatView>() {
                     }
                 }
                 error?.let {
+                    view.hideLoader()
                     view.showError(it.localizedMessage.toString())
                 }
             }

@@ -41,6 +41,7 @@ constructor(): BasePresenter<RequestDetailView>() {
         query.findInBackground { conversation, error: ParseException? ->
 
             error?.let {
+                view.hideLoader()
                 view.showError(it.localizedMessage.toString())
             }
             conversation?.let {
