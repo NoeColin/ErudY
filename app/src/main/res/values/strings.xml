@@ -64,6 +64,6 @@
     <string name="error_save">Error. Try again later.</string>
 
 
-    <string name="email_sent">Un mail contenant un lien de réinitialisation vous a été envoyé.</string>
+    <string name="email_sent">Un mail contenant un lien de réinitialisation a été envoyé à l\'adresse renseignée.</string>
 
 </resources>
