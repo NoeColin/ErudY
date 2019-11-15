@@ -11,10 +11,10 @@ import com.example.erudy.presentation.presenter.presenter.LoginFragmentPresenter
 import com.example.erudy.presentation.presenter.view.LoginView
 import com.example.erudy.presentation.ui.activity.ContainerActivity
 import com.example.erudy.presentation.ui.activity.LoginActivity
-import com.example.erudy.presentation.ui.activity.MainActivity
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject
+
 
 class LoginFragment : BaseFragment<LoginFragmentPresenter>(), LoginView {
 
@@ -44,6 +44,10 @@ class LoginFragment : BaseFragment<LoginFragmentPresenter>(), LoginView {
         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
     }
 
+    override fun showMessage(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+    }
+
     override fun goToMain() {
         val intent = Intent(context, ContainerActivity::class.java)
         startActivity(intent)
@@ -57,6 +61,9 @@ class LoginFragment : BaseFragment<LoginFragmentPresenter>(), LoginView {
         }
         register.setOnClickListener {
             (activity as LoginActivity).goToRegister()
+        }
+        forgot_password.setOnClickListener {
+            presenter.forgetPassword(edit_login_email.text.toString())
         }
     }
 }
