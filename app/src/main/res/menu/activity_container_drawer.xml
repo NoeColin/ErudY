@@ -13,6 +13,12 @@
             android:icon="@drawable/default_profile"
             android:title="@string/menu_profile"/>
 
+        <item
+            android:id="@+id/nav_conversation"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/menu_conversations"
+            />
+
     </group>
 
 

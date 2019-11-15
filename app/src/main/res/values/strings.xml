@@ -44,6 +44,7 @@
 
     <string name="menu_request">Demandes</string>
     <string name="menu_profile">Profil</string>
+    <string name="menu_conversations">Conversations</string>
 
     <string name="save_profile">Sauvegarder</string>
 
