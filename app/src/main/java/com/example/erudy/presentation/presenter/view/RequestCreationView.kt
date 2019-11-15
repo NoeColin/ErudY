@@ -7,4 +7,5 @@ interface RequestCreationView: BaseView {
     fun displayLoader()
     fun hideLoader()
     fun showError(errorMessage: String)
+    fun goToList()
 }

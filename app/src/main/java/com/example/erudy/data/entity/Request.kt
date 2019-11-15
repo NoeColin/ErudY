@@ -18,6 +18,12 @@ class Request: ParseObject() {
         value?.let { put("description", it) }
     }
 
+    var owner: ErudyUser?
+    get() = getParseUser("owner") as ErudyUser
+    set(value) {
+        value?.let { put("owner", it) }
+    }
+    
     var conversations: List<Conversation>?
     get() = getList<Conversation>("conversations")
     set(value) {

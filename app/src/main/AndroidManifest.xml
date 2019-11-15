@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".presentation.ui.activity.EditProfileActivity"></activity>
+        <activity android:name=".presentation.ui.activity.RequestCreationActivity"></activity>
+        <activity android:name=".presentation.ui.activity.RequestDetailActivity"></activity>
         <activity
             android:name=".presentation.ui.activity.ContainerActivity"
             android:label="@string/title_activity_container"
