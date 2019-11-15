@@ -1,15 +1,7 @@
 package com.example.erudy.di
 
-import com.example.erudy.presentation.ui.activity.ChatActivity
-import com.example.erudy.presentation.ui.activity.EditProfileActivity
-import com.example.erudy.presentation.ui.activity.LoginActivity
-import com.example.erudy.presentation.ui.activity.RequestCreationActivity
-import com.example.erudy.presentation.ui.activity.RequestDetailActivity
+import com.example.erudy.presentation.ui.activity.*
 import com.example.erudy.presentation.ui.fragments.*
-import com.example.erudy.presentation.ui.fragments.LoginFragment
-import com.example.erudy.presentation.ui.fragments.ProfileFragment
-import com.example.erudy.presentation.ui.fragments.RegisterFragment
-import com.example.erudy.presentation.ui.fragments.EditProfileFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -54,4 +46,10 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributeChatFragment(): ChatFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeConversationListActivity(): ConversationListActivity
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeConversationListFragment(): ConversationListFragment
 }
