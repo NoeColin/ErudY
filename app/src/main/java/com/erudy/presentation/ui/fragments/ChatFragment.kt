@@ -16,6 +16,8 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_chat.*
 import javax.inject.Inject
 
+
+
 class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresenter>(), ChatView {
 
     @Inject
@@ -45,6 +47,16 @@ class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresen
         val messageList : List<Message> = ArrayList()
         val adapter = ChatAdapter(messageList)
         message_list.adapter = adapter
+
+        message_list.addOnLayoutChangeListener(View.OnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+            if (bottom < oldBottom) {
+                message_list.postDelayed(Runnable {
+                    message_list.smoothScrollToPosition(
+                        message_list.getAdapter()!!.getItemCount() - 1
+                    )
+                }, 100)
+            }
+        })
     }
 
     override fun displayLoader() {
@@ -63,6 +75,7 @@ class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresen
         val adapter = ChatAdapter(messages)
         message_list.adapter = adapter
         adapter.notifyDataSetChanged()
+        message_list.scrollToPosition(messages.size - 1)
     }
 
     override fun createMessage() {

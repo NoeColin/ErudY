@@ -5,6 +5,8 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorOffWhite">#E6E6E6</color>
     <color name="colorWhite">#FAFAFA</color>
+    <color name="colorBlack">#060606</color>
+    <color name="colorLightBlack">#262626</color>
     <color name="colorYnovGreen">#23B2A4</color>
     <color name="colorYnovPink">#EC4363</color>
 
