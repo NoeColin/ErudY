@@ -11,6 +11,9 @@ import com.erudy.presentation.presenter.presenter.LoginFragmentPresenter
 import com.erudy.presentation.presenter.view.LoginView
 import com.erudy.presentation.ui.activity.ContainerActivity
 import com.erudy.presentation.ui.activity.LoginActivity
+import com.parse.ParseInstallation
+import com.parse.ParsePush
+import com.parse.ParseUser
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject
@@ -49,6 +52,10 @@ class LoginFragment : BaseFragment<LoginFragmentPresenter>(), LoginView {
     }
 
     override fun goToMain() {
+        val installation = ParseInstallation.getCurrentInstallation()
+        installation.put("user", ParseUser.getCurrentUser())
+        installation.saveInBackground()
+        ParsePush.subscribeInBackground("Requests")
         val intent = Intent(context, ContainerActivity::class.java)
         startActivity(intent)
         activity?.finish()

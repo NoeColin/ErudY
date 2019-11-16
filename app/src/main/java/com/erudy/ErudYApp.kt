@@ -13,6 +13,7 @@ import com.erudy.utils.MediaLoader
 import com.parse.Parse
 import com.parse.ParseInstallation
 import com.parse.ParseObject
+import com.parse.ParsePush
 import com.yanzhenjie.album.Album
 import com.yanzhenjie.album.AlbumConfig
 import dagger.android.AndroidInjector
@@ -68,8 +69,6 @@ class ErudYApp: Application(), HasActivityInjector, HasSupportFragmentInjector{
                 .server(getString(R.string.serverUrl))
                 .build()
         )
-        Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG)
-        ParseInstallation.getCurrentInstallation().saveInBackground()
     }
 
     private fun initAlbum() {
