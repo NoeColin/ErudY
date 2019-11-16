@@ -17,6 +17,7 @@
     <string name="text_lastname">Nom :</string>
     <string name="lastname_example">Sacquet</string>
     <string name="complete_name_example">Bilbon Sacquet</string>
+    <string name="me">Moi</string>
 
     <string name="message">Saisir un message</string>
     <string name="my_message">Mon message</string>
@@ -47,9 +48,6 @@
     <string name="menu_conversations">Conversations</string>
 
     <string name="save_profile">Sauvegarder</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="error_image_save">Erreur : Image non sauvegardée…</string>
     <string name="error_register_all_fields">Tous les champs doivent être remplis.</string>
