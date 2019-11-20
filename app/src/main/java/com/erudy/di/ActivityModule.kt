@@ -52,4 +52,7 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributeConversationListFragment(): ConversationListFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributeSplashScreenActivity(): SplashScreenActivity
 }

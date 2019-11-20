@@ -1,4 +1,4 @@
-package com.example.erudy
+package com.erudy
 
 import org.junit.Test
 

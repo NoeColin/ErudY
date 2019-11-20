@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import com.erudy.R
 
-private const val SPLASH_TIME_OUT: Long = 3000
-
 class SplashScreenActivity : AppCompatActivity() {
+
+    private val SPLASH_TIME_OUT: Long = 3000
+
     private var mDelayHandler: Handler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,6 @@ class SplashScreenActivity : AppCompatActivity() {
         }
     }
 
-
     public override fun onDestroy() {
 
         if (mDelayHandler != null) {
@@ -42,4 +42,3 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onDestroy()
     }
 }
-

@@ -12,17 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-    android:id="@+id/nav_profile"
-    android:name="com.erudy.presentation.ui.fragments.ProfileFragment"
-    android:label="@string/menu_profile"
-    tools:layout="@layout/fragment_profile" />
-
-    <fragment
         android:id="@+id/nav_conversation"
         android:name="com.erudy.presentation.ui.fragments.ConversationListFragment"
         android:label="@string/menu_conversations"
-        tools:layout="@layout/fragment_conversation_list"
-        />
+        tools:layout="@layout/fragment_conversation_list" />
 
-
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.erudy.presentation.ui.fragments.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

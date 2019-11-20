@@ -44,11 +44,17 @@ class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresen
 
         message_list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
+        //permet d'inverser la liste, les derniers messages apparaitront en haut
+        //message_list.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, true)
+
         val messageList : List<Message> = ArrayList()
         val adapter = ChatAdapter(messageList)
         message_list.adapter = adapter
 
-        message_list.addOnLayoutChangeListener(View.OnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+        // permet de scroll en bas de la liste au lancement de l'activity
+        // ce bout de code fait planté l'app quand aucun message n'existe encore
+        /*
+        * message_list.addOnLayoutChangeListener(View.OnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
             if (bottom < oldBottom) {
                 message_list.postDelayed(Runnable {
                     message_list.smoothScrollToPosition(
@@ -57,6 +63,7 @@ class ChatFragment(val conversationId: String) : BaseFragment<ChatFragmentPresen
                 }, 100)
             }
         })
+        * */
     }
 
     override fun displayLoader() {
